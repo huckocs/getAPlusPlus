@@ -63,19 +63,19 @@ if($('frame[name="alpha"]').length === 0){
 	    // EveryThing.push(theElement,allParentsString,allChildrenString,theDescription);
 		// Elements.push(theElement,theDescription,AllChildren,AllParents)
 		
-	    var TheUniverse = {
-	    	Elements : {
-				Title: theElement,
-	    		Description: theDescription,
-	    		Parents: AllParents,
-	    		Children: AllChildren
-	    	}
-	    };	    
+	    console.log('HIII');
+    	var Elements = {
+			Title: theElement,
+    		Description: theDescription,
+    		Parents: AllParents,
+    		Children: AllChildren
+    	}
+	    
 	    // console.log(TheUniverse.Elements);
 	    // var existingEntries = null;	   
 		var existingEntries = JSON.parse(localStorage.getItem("A++"));
 		if(existingEntries == null) existingEntries = [];
-		var data = TheUniverse;
+		var data = Elements;
 		localStorage.setItem("data", JSON.stringify(data));
 		existingEntries.push(data);
 		jsonEntries = JSON.stringify(existingEntries);
@@ -83,10 +83,10 @@ if($('frame[name="alpha"]').length === 0){
 		console.log(jsonEntries);
 	    localStorage.setItem("A++", JSON.stringify(existingEntries));
 
-		var csvContent = "data:text/csv;charset=utf-8,";
+		// var csvContent = "data:text/csv;charset=utf-8,";
 
-		JSONToCSVConvertor(jsonEntries, "A++", true);
-		var encodedUri = encodeURI(csvContent);
+		// JSONToCSVConvertor(jsonEntries, "A++", true);
+		// var encodedUri = encodeURI(csvContent);
 		// console.log('encodedUri: ', encodedUri);
 		// console.log(JSON.parse(localStorage.getItem("A++")));
 		// window.open(encodedUri);
